@@ -78,21 +78,34 @@ Modify the values in hyprpaper.conf to change your background
 `yay -S hyprlock` \
 
 #### App launcher
-walker \
-`yay -S walker elephant elephant-desktopapplications elephant-providerlist` \
-In hyprland conf: \
-`exec-once = elephant` \
-`exec-once = walker --gapplication-service` \
-`$menu = walker` #
-`ln -s ~/dev/conf/arch/.config/walker/ ~/.config/walker` \
-`ln -s ~/dev/conf/arch/.config/elephant/ ~/.config/elephant` \
+rofi \
+`yay -S rofi-wayland` \
+`ln -s ~/dev/arch/.config/rofi/ ~/.config/rofi`
 
 #### Browser
+brave \
 `yay -S brave-bin`
 
-#### Btop
+#### WiFi manager
+Impala \
+`yay -S impala`
+
+#### Bluetooth \
+bluetui
+`yay -S bluetui`
+
+### Tools
+
+#### Activity Monitor
+btop \
 `yay -S btop` \
 `ln -s ~/dev/conf/arch/.config/btop/ ~/.config/btop`
+
+#### Launch webapp
+`sudo cp ~/dev/conf/arch/bin/launch-browser /bin/` \
+`sudo chmod +x /bin/launch-webapp`
+
+### Dev
 
 #### Docker
 `yay -S docker` \
@@ -100,12 +113,6 @@ In hyprland conf: \
 `sudo usermod -aG docker ${USER}` \
 `newgrp docker`
 `yay -S lazydocker`
-
-#### Blueberry
-`yay -S blueberry` # bluetooth manager
-
-#### Impala
-`yay -S impala` # wifi manager
 
 #### Jetbrains
 `yay -S jetbrains-toolbox` then install intellij yourself \
@@ -118,6 +125,4 @@ In hyprland conf: \
 `gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"` \
 `gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"`
 
-##### Launch webapp
-`sudo cp ~/dev/conf/arch/bin/launch-browser /bin/` \
-`sudo chmod +x /bin/launch-webapp`
+
