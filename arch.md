@@ -34,35 +34,48 @@ At this point it may also be worth setting some of the defaults to make the rest
 
 ## Setup
 
-#### This repo
-Clone this repo
+### This repo
+Clone this repo \
 `mkdir dev` \
 `cd dev` \
 `git clone https://github.com/noahhhx/conf.git`
 
+### Desktop Environment
+
 #### Hyprland Config
-`ln -s ~/dev/conf/arch/.config/hypr/ ~/.config/`
+Note this config relies on some below apps, like terminal being set as Alacritty
+read it & maybe make sure you have most of below setup first. \
+`ln -s ~/dev/arch/.config/hypr/ ~/.config/hypr` \
 `hyprctl reload`
-
-#### Wallpaper
-hyprpaper \
-`pacman -S hyprpaper` \
-`ln -s ~/dev/conf/arch/.config/wallpapers/ ~/.config/wallpapers/` \
-`ln -s ~/dev/conf/arch/.config/hypr/hyprpaper.conf ~/.config/hypr/hyprpaper.conf` \
-add to hyprland.conf `exec-once hyprpaper`
-
-#### Lock screen
-`yay -S hyprlock` \
 
 #### Font
 Cascadia Mono Nerdfont \
 `pacman -S ttf-cascadia-mono-nerd`
 
+#### Terminal Emulator
+alacritty \
+`yay -S alacritty` \
+`ln -s ~/dev/arch/.config/alacritty/ ~/.config/alacritty`
+
+#### File Manager
+`yay -S nautilus`
+
 #### Status bar
 waybar \
 `yay -S waybar` \
-`ln -s ~/dev/conf/arch/.config/waybar/ ~/.config/` \
-add to hyprland.conf `exec-once waybar`
+`ln -s ~/dev/arch/.config/waybar/ ~/.config/waybar` \
+It should alreaedy be there, but of not add to hyprland.conf `exec-once waybar`
+
+#### Wallpaper
+hyprpaper \
+`pacman -S hyprpaper` \
+`ln -s ~/dev/arch/.config/wallpapers/ ~/.config/wallpapers` \
+`ln -s ~/dev/conf/arch/.config/hypr/hyprpaper.conf ~/.config/hypr/hyprpaper.conf` \
+add to hyprland.conf `exec-once hyprpaper` \
+Modify the values in hyprpaper.conf to change your background
+
+#### Lock screen
+`yay -S hyprlock` \
 
 #### App launcher
 walker \
@@ -73,13 +86,6 @@ In hyprland conf: \
 `$menu = walker` #
 `ln -s ~/dev/conf/arch/.config/walker/ ~/.config/walker` \
 `ln -s ~/dev/conf/arch/.config/elephant/ ~/.config/elephant` \
-
-####  Hyprland
-`ln -s ~/dev/conf/arch/.config/hypr/ ~/.config/hypr`
-
-#### Alacritty
-`yay -S alacritty` \
-`ln -s ~/dev/conf/arch/.config/alacritty/ ~/.config/alacritty`
 
 #### Browser
 `yay -S brave-bin`
@@ -111,9 +117,6 @@ In hyprland conf: \
 `yay -S xdg-desktop-portal` \
 `gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"` \
 `gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"`
-
-#### File Manager
-`yay -S nautilus`
 
 ##### Launch webapp
 `sudo cp ~/dev/conf/arch/bin/launch-browser /bin/` \
