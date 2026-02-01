@@ -98,6 +98,18 @@ bluetui
 `git clone -b main --depth=1 https://github.com/uiriansan/SilentSDDM && cd SilentSDDM && ./install.sh` \
 `yay -S kwallet-pam` - Unlock KDE wallet on SDDM login \
 https://wiki.archlinux.org/title/KDE_Wallet#Unlock_KDE_Wallet_automatically_on_login
+
+#### Brightness
+`yay -S brightnessctl` \
+
+#### Sleep & Hibernate
+Sleep should just work \
+`systemctl sleep`
+
+Hibernate might need some work \
+https://gist.github.com/MazeW/4852f88edcfa5c8bc9286ed188b2a4c6
+
+
 ### Tools
 
 #### Activity Monitor
