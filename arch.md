@@ -121,6 +121,11 @@ btop \
 `sudo cp ~/dev/conf/arch/bin/launch-browser /bin/` \
 `sudo chmod +x /bin/launch-webapp`
 
+#### Power Menu
+`mkdir ~/.local/bin`
+`cp ~/dev/conf/arch/bin/powermenu.sh ~/.local/bin/` \
+`sudo chmod +x ~/.local/bin/powermenu.sh`
+
 ### Dev
 
 #### Docker
