@@ -3,7 +3,11 @@
 ## Install
 - Boot into the ISO.
 - Basically follow `https://wiki.archlinux.org/title/Archinstall` till we're installed.
-  - Choose Hyprland with sddm & make sure your user can use sudo.  
+  - Select `multilib`
+  - btrfs for snapshots
+  - `limine` bootloader
+  - Creare sudo user
+  - Choose Hyprland with sddm (change to greetd later) && polkit  
 - Restart with the installation device removed.
 - You should be able to login as the user you setup & press SUPER+Q to launch a terminal.
 - Update your system
@@ -50,12 +54,12 @@ read it & maybe make sure you have most of below setup first. \
 
 #### Font
 Cascadia Mono Nerdfont \
-`pacman -S ttf-cascadia-mono-nerd`
+`pacman -S ttf-jetbrains-mono-nerd`
 
 #### Terminal Emulator
-alacritty \
-`yay -S alacritty` \
-`ln -s ~/dev/arch/.config/alacritty/ ~/.config/alacritty`
+kitty \
+`yay -S kitty` \
+`rm -rf ~/.config/kitty && ln -s ~/dev/arch/.config/kitty/ ~/.config/kitty`
 
 #### File Manager
 `yay -S nautilus`
@@ -81,10 +85,6 @@ Modify the values in hyprpaper.conf to change your background
 rofi \
 `yay -S rofi-wayland` \
 `ln -s ~/dev/arch/.config/rofi/ ~/.config/rofi`
-
-#### Browser
-brave \
-`yay -S brave-bin`
 
 #### WiFi manager
 Impala \
@@ -118,12 +118,12 @@ btop \
 `ln -s ~/dev/conf/arch/.config/btop/ ~/.config/btop`
 
 #### Launch webapp
-`sudo cp ~/dev/conf/arch/bin/launch-browser /bin/` \
+`sudo cp ~/dev/arch/bin/launch-webapp /bin/` \
 `sudo chmod +x /bin/launch-webapp`
 
 #### Power Menu
 `mkdir ~/.local/bin`
-`cp ~/dev/conf/arch/bin/powermenu.sh ~/.local/bin/` \
+`cp ~/dev/arch/bin/powermenu.sh ~/.local/bin/` \
 `sudo chmod +x ~/.local/bin/powermenu.sh`
 
 ### Dev
